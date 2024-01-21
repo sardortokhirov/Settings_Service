@@ -1,6 +1,6 @@
-package com.example.registeration_service.config;
+package com.example.settings.config;
 
-import com.example.registeration_service.service.UserDetailServiceImpl;
+import com.example.settings.service.UserDetailServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,20 +11,16 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
- * Date-10/24/2023
+ * Date-21/01/2024
  * By Sardor Tokhirov
- * Time-12:34 PM (GMT+5)
  */
+
 @Configuration
 @RequiredArgsConstructor
 public class ApplicationConfig {
 
     private final UserDetailServiceImpl userDetailsService;
 
-//    @Bean
-//    public UserDetailsService userDetailsService() {
-//        return username -> userRepository.findByEmail(username).orElseThrow(() -> new UsernameNotFoundException(String.format(USER_NOT_FOUND, username)));
-//    }
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {

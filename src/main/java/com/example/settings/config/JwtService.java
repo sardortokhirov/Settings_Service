@@ -1,6 +1,6 @@
-package com.example.registeration_service.config;
+package com.example.settings.config;
 
-import com.example.registeration_service.model.User;
+import com.example.settings.model.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -17,9 +17,8 @@ import java.util.Map;
 import java.util.function.Function;
 
 /**
- * Date-10/25/2023
+ * Date-21/01/2024
  * By Sardor Tokhirov
- * Time-5:42 AM (GMT+5)
  */
 
 @Service

@@ -1,11 +1,10 @@
-package com.example.registeration_service.model;
+package com.example.settings.model;
 
 import jakarta.persistence.*;
 
 /**
- * Date-10/24/2023
+ * Date-21/01/2024
  * By Sardor Tokhirov
- * Time-8:41 AM (GMT+5)
  */
 @Entity
 @Table(name = "country_codes")

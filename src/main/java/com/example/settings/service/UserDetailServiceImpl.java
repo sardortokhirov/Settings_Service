@@ -1,6 +1,6 @@
-package com.example.registeration_service.service;
+package com.example.settings.service;
 
-import com.example.registeration_service.repository.UserRepository;
+import com.example.settings.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -8,10 +8,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 /**
- * Date-10/25/2023
+ * Date-21/01/2024
  * By Sardor Tokhirov
- * Time-11:35 AM (GMT+5)
  */
+
 @Service
 @AllArgsConstructor
 public class UserDetailServiceImpl implements UserDetailsService {

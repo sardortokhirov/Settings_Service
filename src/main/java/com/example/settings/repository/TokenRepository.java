@@ -1,6 +1,6 @@
-package com.example.registeration_service.repository;
+package com.example.settings.repository;
 
-import com.example.registeration_service.token.Token;
+import com.example.settings.token.Token;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -9,9 +9,10 @@ import java.util.Optional;
 import java.util.UUID;
 
 /**
- * Date-7/5/2023
- * Time-9:36 AM
+ * Date-21/01/2024
+ * By Sardor Tokhirov
  */
+
 public interface TokenRepository extends JpaRepository<Token, Integer> {
 
     @Query("""

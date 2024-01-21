@@ -1,8 +1,7 @@
-package com.example.registeration_service.model;
+package com.example.settings.model;
 
-import com.example.registeration_service.role.Role;
+import com.example.settings.role.Role;
 import jakarta.persistence.*;
-import lombok.Builder;
 import org.hibernate.annotations.NaturalId;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -14,9 +13,8 @@ import java.util.Collections;
 import java.util.UUID;
 
 /**
- * Date-10/24/2023
+ * Date-21/01/2024
  * By Sardor Tokhirov
- * Time-7:54 AM (GMT+5)
  */
 @Entity
 @Table(name = "users")

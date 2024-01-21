@@ -1,9 +1,8 @@
-package com.example.registeration_service.role;
+package com.example.settings.role;
 
 /**
- * Date-10/25/2023
+ * Date-21/01/2024
  * By Sardor Tokhirov
- * Time-8:08 AM (GMT+5)
  */
 public enum Role {
     TEACHER, STUDENT

@@ -1,1 +1,29 @@
+logging:
+  level:
+    org:
+    springframework: error
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/loomo
+    username: postgres
+    password: sardor
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+
+
+application:
+  security:
+    jwt:
+      secret-key: bGbWqUxYztvCj8FzNO8GuJYY/YzkrU9wGx9+gaGwBo+Dmw0c70GFGZhtp2vw+1uq
+      expiration: 86400000
+      refresh-token:
+        expiration: 604800000
 

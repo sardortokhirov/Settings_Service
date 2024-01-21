@@ -1,14 +1,14 @@
-package com.example.registeration_service.model;
+package com.example.settings.model;
 
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
 /**
- * Date-10/26/2023
+ * Date-21/01/2024
  * By Sardor Tokhirov
- * Time-3:14 PM (GMT+5)
  */
+
 @Entity
 @Table(name = "verification_numbers")
 public class VerificationNumber {

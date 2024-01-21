@@ -1,8 +1,8 @@
-package com.example.registeration_service.token;
+package com.example.settings.token;
 
 /**
- * Date-7/5/2023
- * Time-9:28 AM
+ * Date-21/01/2024
+ * By Sardor Tokhirov
  */
 public enum TokenType {
     BEARER

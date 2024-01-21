@@ -1,6 +1,6 @@
-package com.example.registeration_service.config;
+package com.example.settings.config;
 
-import com.example.registeration_service.token.TokenRepository;
+import com.example.settings.repository.TokenRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,10 +18,10 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 
 /**
- * Date-10/25/2023
+ * Date-21/01/2024
  * By Sardor Tokhirov
- * Time-4:10 AM (GMT+5)
  */
+
 @Component
 @RequiredArgsConstructor
 public class JwtAuthFilter extends OncePerRequestFilter {

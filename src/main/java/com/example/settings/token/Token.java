@@ -1,6 +1,6 @@
-package com.example.registeration_service.token;
+package com.example.settings.token;
 
-import com.example.registeration_service.model.User;
+import com.example.settings.model.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,8 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Date-7/5/2023
- * Time-9:26 AM
+ * Date-21/01/2024
+ * By Sardor Tokhirov
  */
 @Data
 @Entity
