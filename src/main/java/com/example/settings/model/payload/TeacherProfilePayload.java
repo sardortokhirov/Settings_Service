@@ -6,22 +6,18 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-
 import java.time.LocalDate;
 
-
 /**
- * Date-1/22/2024
+ * Date-1/27/2024
  * By Sardor Tokhirov
- * Time-11:29 AM (GMT+5)
+ * Time-11:00 AM (GMT+5)
  */
-
-
 @Getter
 @Setter
 @RequiredArgsConstructor
 @AllArgsConstructor
-public class StudentProfilePayload {
+public class TeacherProfilePayload {
 
 
     private String firstName;
@@ -37,5 +33,6 @@ public class StudentProfilePayload {
     private LocalDate dateOfBirth;
 
     private String bio;
+
 
 }

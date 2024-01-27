@@ -1,6 +1,8 @@
 package com.example.settings.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import java.util.UUID;
 
@@ -10,11 +12,22 @@ import java.util.UUID;
  */
 @Entity
 @Table(name = "students")
+@AllArgsConstructor
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "teacherId", columnDefinition = "uuid")
     private UUID teacherId;
+
+    private String bio;
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
@@ -23,6 +36,7 @@ public class Student {
     public Student(User user) {
         this.user = user;
     }
+
 
     public Student() {
     }
