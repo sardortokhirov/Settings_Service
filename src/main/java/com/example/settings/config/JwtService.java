@@ -27,13 +27,6 @@ public class JwtService {
     @Value("${application.security.jwt.secret-key}")
     private String secretKey;
 
-    @Value("${application.security.jwt.expiration}")
-    private Long jwtExpiration;
-
-    @Value("${application.security.jwt.refresh-token.expiration}")
-    private Long refreshExpiration;
-
-
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
     }
@@ -70,29 +63,8 @@ public class JwtService {
         return extractClaim(token, Claims::getExpiration);
     }
 
-    public String generateToken(User user) {
-        return generateToken(new HashMap<>(), user);
-    }
 
-    public String generateToken(Map<String, Object> extractClaims, User user) {
-        return buildToken(extractClaims, user, jwtExpiration);
-    }
 
-    public String generateRefreshToken(User user) {
-        return buildToken(new HashMap<>(), user, refreshExpiration);
-    }
-
-    private String buildToken(Map<String, Object> extractClaims, User user, long expiration) {
-        extractClaims.put("role", user.getRole());
-        extractClaims.put("enabled", user.isEnabled());
-        return Jwts.builder()
-                .setClaims(extractClaims)
-                .setSubject(user.getUsername())
-                .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + expiration))
-                .signWith(getSignInKey(), SignatureAlgorithm.HS256)
-                .compact();
-    }
 
 
 }

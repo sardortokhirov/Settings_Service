@@ -16,8 +16,8 @@ import java.util.UUID;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @Column(name = "teacherId", columnDefinition = "uuid")
-    private UUID teacherId;
+    @Column(name = "studentId", columnDefinition = "uuid")
+    private UUID studentId;
 
     private String bio;
 
@@ -40,13 +40,12 @@ public class Student {
 
     public Student() {
     }
-
-    public UUID getTeacherId() {
-        return teacherId;
+    public UUID getStudentId() {
+        return studentId;
     }
 
-    public void setTeacherId(UUID teacherId) {
-        this.teacherId = teacherId;
+    public void setStudentId(UUID studentId) {
+        this.studentId = studentId;
     }
 
     public User getUser() {

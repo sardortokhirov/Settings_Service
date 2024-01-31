@@ -11,7 +11,7 @@ spring:
     password: sardor
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
@@ -27,3 +27,5 @@ application:
       refresh-token:
         expiration: 604800000
 
+server:
+  port: 8081
