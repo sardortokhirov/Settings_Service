@@ -17,6 +17,12 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  codec:
+    max-in-memory-size: 10MB
 
 
 application:
@@ -29,3 +35,12 @@ application:
 
 server:
   port: 8081
+
+
+
+aws:
+  region: us-east-1
+  s3:
+    buckets:
+      user: fs-amigoscode-customer-client-2
+

@@ -18,6 +18,6 @@ import java.util.UUID;
 public interface StudentRepository extends JpaRepository<Student, UUID> {
 
     @Query("SELECT s FROM Student s WHERE s.user.userName = :username")
-    Student findStudentByUsername(@Param("username") String username);
+   Optional<Student>  findStudentByUsername(@Param("username") String username);
 
 }
