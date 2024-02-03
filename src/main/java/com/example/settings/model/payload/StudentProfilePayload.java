@@ -30,7 +30,7 @@ public class StudentProfilePayload {
 
     private Gender gender;
 
-    private String profilePictureUrl;
+    private byte[] profilePicture;
 
     private String userName;
 

@@ -45,8 +45,8 @@ public class User implements UserDetails {
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Column(name = "profile_picture_url")
-    private String profilePictureUrl;
+    @Column(name = "profile_picture_id")
+    private String profile_picture_id;
 
     @Column(name = "is_enabled")
     private boolean isEnabled=false;
@@ -75,7 +75,7 @@ public class User implements UserDetails {
         this.role = role;
     }
 
-    public User(String firstName, String lastName, LocalDate dateOfBirth, String userName, String email, String password, Role role, String phoneNumber, String profilePictureUrl, Country country, CountryCode countryCode, Gender gender) {
+    public User(String firstName, String lastName, LocalDate dateOfBirth, String userName, String email, String password, Role role, String phoneNumber, String profile_picture_id, Country country, CountryCode countryCode, Gender gender) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
@@ -84,7 +84,7 @@ public class User implements UserDetails {
         this.password = password;
         this.role = role;
         this.phoneNumber = phoneNumber;
-        this.profilePictureUrl = profilePictureUrl;
+        this.profile_picture_id = profile_picture_id;
         this.country = country;
         this.countryCode = countryCode;
         this.gender = gender;
@@ -199,12 +199,12 @@ public class User implements UserDetails {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getProfilePictureUrl() {
-        return profilePictureUrl;
+    public String getProfilePictureId() {
+        return profile_picture_id;
     }
 
-    public void setProfilePictureUrl(String profilePictureUrl) {
-        this.profilePictureUrl = profilePictureUrl;
+    public void setProfilePictureId(String profile_picture_id) {
+        this.profile_picture_id = profile_picture_id;
     }
 
     public Country getCountry() {

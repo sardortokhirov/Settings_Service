@@ -1,6 +1,7 @@
 package com.example.settings.controller;
 
 import com.example.settings.model.payload.StudentProfilePayload;
+import com.example.settings.service.SettingsService;
 import com.example.settings.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
@@ -21,6 +22,8 @@ public class StudentProfileController {
 
     private final StudentService studentService;
 
+    private final SettingsService settingsService;
+
     @GetMapping("/{username}")
     public ResponseEntity<StudentProfilePayload> getStudentProfileInfo(@PathVariable String username) {
         return ResponseEntity.ok(studentService.getStudentProfile(username));
@@ -28,13 +31,13 @@ public class StudentProfileController {
 
     @PostMapping(value = "/{username}/profile-image", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity uploadStudentProfileImage(@PathVariable String username, @RequestParam MultipartFile file) {
-        studentService.uploadStudentProfileImage(username,file);
+        settingsService.uploadUserProfileImage(username,file);
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/{username}/profile-image")
+    @GetMapping(value = "/{username}/profile-image",produces = MediaType.IMAGE_JPEG_VALUE)
     public ResponseEntity<byte[]> getStudentProfileImage(@PathVariable String username) {
-        return ResponseEntity.ok(studentService.getStudentProfileImage(username));
+        return ResponseEntity.ok(settingsService.getUserProfileImage(username));
     }
 
 }

@@ -26,7 +26,7 @@ public class TeacherService {
     public TeacherProfilePayload getTeacherProfile(String userName) {
         Teacher teacher=teacherRepository.findTeacherByUsername(userName);
         User user=teacher.getUser();
-        return new TeacherProfilePayload(user.getFirstName(),user.getLastName(),user.getGender(),user.getProfilePictureUrl(),user.getUserName(),user.getDateOfBirth(),teacher.getBio());
+        return new TeacherProfilePayload(user.getFirstName(),user.getLastName(),user.getGender(),user.getProfilePictureId(),user.getUserName(),user.getDateOfBirth(),teacher.getBio());
 
     }
 }

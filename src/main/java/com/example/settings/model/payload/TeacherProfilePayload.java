@@ -26,7 +26,7 @@ public class TeacherProfilePayload {
 
     private Gender gender;
 
-    private String profilePictureUrl;
+    private String profilePicture;
 
     private String userName;
 
