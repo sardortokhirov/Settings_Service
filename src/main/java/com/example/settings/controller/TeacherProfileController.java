@@ -1,7 +1,9 @@
 package com.example.settings.controller;
 
 
+import com.example.settings.model.payload.StudentProfilePayload;
 import com.example.settings.model.payload.TeacherProfilePayload;
+import com.example.settings.service.StudentService;
 import com.example.settings.service.TeacherService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +26,7 @@ public class TeacherProfileController {
 
 
     @GetMapping("/{username}")
-    public ResponseEntity<TeacherProfilePayload> getTeacherProfileInfo(@PathVariable String username) {
+    public ResponseEntity<TeacherProfilePayload> getStudentProfileInfo(@PathVariable String username) {
         return ResponseEntity.ok(teacherService.getTeacherProfile(username));
     }
 

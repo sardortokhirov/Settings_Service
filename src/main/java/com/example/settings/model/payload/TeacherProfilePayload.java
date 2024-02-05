@@ -26,7 +26,7 @@ public class TeacherProfilePayload {
 
     private Gender gender;
 
-    private String profilePicture;
+    private byte[] profilePicture;
 
     private String userName;
 
