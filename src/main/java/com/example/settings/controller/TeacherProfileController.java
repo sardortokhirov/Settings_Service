@@ -26,7 +26,7 @@ public class TeacherProfileController {
 
 
     @GetMapping("/{username}")
-    public ResponseEntity<TeacherProfilePayload> getStudentProfileInfo(@PathVariable String username) {
+    public ResponseEntity<TeacherProfilePayload> getTeacherProfileInfo(@PathVariable String username) {
         return ResponseEntity.ok(teacherService.getTeacherProfile(username));
     }
 
