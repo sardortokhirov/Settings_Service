@@ -1,8 +1,13 @@
 package com.example.settings.service;
 
 import com.example.settings.model.Student;
+import com.example.settings.model.Teacher;
 import com.example.settings.model.User;
+import com.example.settings.model.payload.ProfileEditRequest;
+import com.example.settings.repository.StudentRepository;
+import com.example.settings.repository.TeacherRepository;
 import com.example.settings.repository.UserRepository;
+import com.example.settings.role.Role;
 import com.example.settings.s3.S3Buckets;
 import com.example.settings.s3.S3Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +25,19 @@ import java.util.UUID;
 @Service
 public class SettingsService {
     private final UserRepository userRepository;
+
+    private final TeacherRepository teacherRepository;
+
+    private final StudentRepository studentRepository;
     private final S3Service s3Service;
 
     private final S3Buckets s3Buckets;
 
     @Autowired
-    public SettingsService(UserRepository userRepository, S3Service s3Service, S3Buckets s3Buckets) {
+    public SettingsService(UserRepository userRepository, TeacherRepository teacherRepository, StudentRepository studentRepository, S3Service s3Service, S3Buckets s3Buckets) {
         this.userRepository = userRepository;
+        this.teacherRepository = teacherRepository;
+        this.studentRepository = studentRepository;
         this.s3Service = s3Service;
         this.s3Buckets = s3Buckets;
     }
@@ -62,5 +73,20 @@ public class SettingsService {
                 s3Buckets.getUser(),
                 "profile-images/%s/%s".formatted(username, profilePictureId)
         );
+    }
+
+    public void updateUserProfile(String username, ProfileEditRequest request) {
+        User user = userRepository.findByUserName(username).orElseThrow();
+        if (user.getRole().equals(Role.TEACHER)) {
+            Teacher teacher = teacherRepository.findByUser(user);
+            teacher.setBio(request.bio());
+            teacherRepository.save(teacher);
+        }
+        if (user.getRole().equals(Role.STUDENT)) {
+            Student student = studentRepository.findByUser(user);
+            student.setBio(request.bio());
+            studentRepository.save(student);
+        }
+
     }
 }

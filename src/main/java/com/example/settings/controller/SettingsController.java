@@ -1,5 +1,6 @@
 package com.example.settings.controller;
 
+import com.example.settings.model.payload.ProfileEditRequest;
 import com.example.settings.service.SettingsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
@@ -32,5 +33,11 @@ public class SettingsController {
     public ResponseEntity<String> getUserProfileImage(@PathVariable String username) {
         byte[] imageBytes = settingsService.getUserProfileImage(username);
         return ResponseEntity.ok(Base64.getEncoder().encodeToString(imageBytes));
+    }
+
+    @PutMapping(value = "/{username}/profile")
+    public ResponseEntity updateProfile(@PathVariable String username,@RequestBody ProfileEditRequest  request) {
+        settingsService.updateUserProfile(username,request);
+        return ResponseEntity.ok().build();
     }
 }

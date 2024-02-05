@@ -1,13 +1,10 @@
 package com.example.settings.controller;
 
 import com.example.settings.model.payload.StudentProfilePayload;
-import com.example.settings.service.SettingsService;
 import com.example.settings.service.StudentService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 /**
  * Date-1/22/2024
