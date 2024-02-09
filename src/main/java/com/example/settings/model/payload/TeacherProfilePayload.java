@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 /**
  * Date-1/27/2024
@@ -19,6 +20,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class TeacherProfilePayload {
 
+
+    private UUID teacherId;
 
     private String firstName;
 

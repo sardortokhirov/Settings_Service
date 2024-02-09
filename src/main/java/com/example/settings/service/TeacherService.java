@@ -7,6 +7,8 @@ import com.example.settings.repository.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 /**
  * Date-1/27/2024
  * By Sardor Tokhirov
@@ -26,9 +28,15 @@ public class TeacherService {
     }
 
     public TeacherProfilePayload getTeacherProfile(String userName) {
-        Teacher teacher=teacherRepository.findTeacherByUsername(userName);
-        User user=teacher.getUser();
-        return new TeacherProfilePayload(user.getFirstName(),user.getLastName(),user.getGender(),settingsService.getUserProfileImage(userName, user.getProfilePictureId()),user.getUserName(),user.getDateOfBirth(),teacher.getBio());
+        Teacher teacher = teacherRepository.findTeacherByUsername(userName);
+        User user = teacher.getUser();
+        return new TeacherProfilePayload(teacher.getTeacherId(), user.getFirstName(), user.getLastName(), user.getGender(), settingsService.getUserProfileImage(userName, user.getProfilePictureId()), user.getUserName(), user.getDateOfBirth(), teacher.getBio());
 
+    }
+
+    public TeacherProfilePayload getTeacherProfileById(UUID teacherId) {
+        Teacher teacher = teacherRepository.findById(teacherId).orElseThrow();
+        User user = teacher.getUser();
+        return new TeacherProfilePayload(teacher.getTeacherId(), user.getFirstName(), user.getLastName(), user.getGender(), settingsService.getUserProfileImage(user.getUsername(), user.getProfilePictureId()), user.getUserName(), user.getDateOfBirth(), teacher.getBio());
     }
 }
