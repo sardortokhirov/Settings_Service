@@ -8,6 +8,7 @@ import lombok.Setter;
 
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 
 /**
@@ -23,7 +24,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class StudentProfilePayload {
 
-
+    private UUID studentId;
     private String firstName;
 
     private String lastName;

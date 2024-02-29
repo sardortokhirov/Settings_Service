@@ -11,13 +11,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationProperties(prefix = "aws.s3.buckets")
 public class S3Buckets {
-    private String user;
+    private String userData;
 
-    public String getUser() {
-        return user;
+    public String getUserData() {
+        return userData;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUserData(String userData) {
+        this.userData = userData;
     }
 }

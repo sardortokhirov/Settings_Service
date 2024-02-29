@@ -47,8 +47,8 @@ public class SettingsService {
         String randomId = UUID.randomUUID().toString();
         try {
             s3Service.putObject(
-                    s3Buckets.getUser(),
-                    "profile-images/%s/%s".formatted(username, randomId),
+                    s3Buckets.getUserData(),
+                    "%s/%s".formatted(username, randomId),
                     file.getBytes()
             );
         } catch (IOException e) {
@@ -62,16 +62,16 @@ public class SettingsService {
         if (username == null || uuid == null) return null;
 
         return s3Service.getObject(
-                s3Buckets.getUser(),
-                "profile-images/%s/%s".formatted(username, uuid)
+                s3Buckets.getUserData(),
+                "%s/%s".formatted(username, uuid)
         );
     }
 
     public byte[] getUserProfileImage(String username) {
         String profilePictureId = userRepository.findByUserName(username).orElseThrow().getProfilePictureId();
         return s3Service.getObject(
-                s3Buckets.getUser(),
-                "profile-images/%s/%s".formatted(username, profilePictureId)
+                s3Buckets.getUserData(),
+                "%s/%s".formatted(username, profilePictureId)
         );
     }
 

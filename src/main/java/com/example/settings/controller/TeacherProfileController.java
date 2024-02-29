@@ -29,12 +29,9 @@ public class TeacherProfileController {
     public ResponseEntity<TeacherProfilePayload> getTeacherProfileInfo(@PathVariable String username) {
         return ResponseEntity.ok(teacherService.getTeacherProfile(username));
     }
-//
-//    @GetMapping("/{teacherId}")
-//    public ResponseEntity<TeacherProfilePayload> getTeacherProfileInfoById(@PathVariable UUID teacherId) {
-//        return ResponseEntity.ok(teacherService.getTeacherProfileById(teacherId));
-//    }
-//
 
-
+    @GetMapping("/id/{teacherId}")
+    public ResponseEntity<TeacherProfilePayload> getTeacherProfileInfoById(@PathVariable UUID teacherId) {
+        return ResponseEntity.ok(teacherService.getTeacherProfileById(teacherId));
+    }
 }
