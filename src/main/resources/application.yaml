@@ -6,7 +6,7 @@ logging:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5433/loomo
+    url: jdbc:postgresql://postgres.loomo.com:5431/loomo
     username: postgres
     password: sardor
   jpa:
