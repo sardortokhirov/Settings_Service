@@ -6,7 +6,7 @@ logging:
 
 spring:
   datasource:
-    url: jdbc:postgresql://postgres.loomo.com:5432/loomo
+    url: jdbc:postgresql://16.170.234.255:5432:5432/loomo
     username: postgres
     password: sardor
   jpa:
@@ -39,7 +39,7 @@ server:
 
 
 aws:
-  region: us-east-1
+  region: eu-north-1
   s3:
     buckets:
       userData: loomo-user-data
