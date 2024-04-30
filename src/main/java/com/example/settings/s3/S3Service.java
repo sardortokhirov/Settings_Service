@@ -32,16 +32,19 @@ public class S3Service {
                 .build();
         s3.putObject(objectRequest, RequestBody.fromBytes(file));
     }
+
     public byte[] getObject(String bucketName, String key) {
-        GetObjectRequest getObjectRequest = GetObjectRequest.builder()
-                .bucket(bucketName)
-                .key(key)
-                .build();
-        ResponseInputStream<GetObjectResponse> res = s3.getObject(getObjectRequest);
         try {
+            GetObjectRequest getObjectRequest = GetObjectRequest.builder()
+                    .bucket(bucketName)
+                    .key(key)
+                    .build();
+            ResponseInputStream<GetObjectResponse> res = s3.getObject(getObjectRequest);
+
             return res.readAllBytes();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            //custom Exception
+            return null;
         }
 
     }
