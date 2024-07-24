@@ -28,6 +28,7 @@ public class StudentService {
 
 
     public StudentProfilePayload getStudentProfile(String userName) {
+        System.out.println("uuuuuuuuuuuuuuuuuuuuuuuu: "+ userName);
         Student student = studentRepository.findStudentByUsername(userName).orElseThrow();
         User user = student.getUser();
         return new StudentProfilePayload(user.getUserId(),user.getFirstName(), user.getLastName(), user.getGender(), settingsService.getUserProfileImage(userName, user.getProfilePictureId()), user.getUserName(), user.getDateOfBirth(), student.getBio());
