@@ -43,5 +43,5 @@ aws:
   region: eu-north-1
   s3:
     buckets:
-      userData: user-data-loomo
+      userData: loomo-data
 
